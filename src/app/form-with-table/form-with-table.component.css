@@ -1,0 +1,64 @@
+/* CUSOM CLASSES */
+.main-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m50 {
+  margin: 40px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card-reactivity {
+  width: 500px;
+}
+
+.card-reactivity mat-card-title {
+  margin-bottom: 20px;
+}
+
+.card-reactivity mat-card-content {
+  height: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-reactivity div {
+  font-size: 16px;
+  flex-basis: 100%;
+}
+
+/* CLASSES FROM ANGULAR EXAMPLES*/
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+table {
+  /*width: 1148px;*/
+  min-width: 800px;
+  width: 100%;
+}
+
+/* TO FIX UNDERLINE */
+::ng-deep .without-underline .mat-form-field-underline {
+  display: none;
+}
