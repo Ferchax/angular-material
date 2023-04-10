@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //Angular Material
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -25,12 +26,17 @@ import { MatNativeDateModule } from '@angular/material/core';
 //Components
 import { FormWithTableComponent } from './form-with-table/form-with-table.component';
 import { TableGpt4Component } from './table-gpt4/table-gpt4.component';
+import { RetryPolicyComponent } from './retry-policy/retry-policy.component';
+
+//Services
+import { RetryPolicyService } from './services/retry-policy.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormWithTableComponent,
-    TableGpt4Component
+    TableGpt4Component,
+    RetryPolicyComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,7 @@ import { TableGpt4Component } from './table-gpt4/table-gpt4.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatSidenavModule,
     MatCheckboxModule,
     MatToolbarModule,
@@ -52,7 +59,7 @@ import { TableGpt4Component } from './table-gpt4/table-gpt4.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [RetryPolicyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
