@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { RetryPolicyService } from '../services/retry-policy.service';
 
 interface Data {
@@ -18,18 +18,18 @@ export class RetryPolicyComponent implements OnInit {
   data!: Data;
 
   constructor(
-    /*private http: HttpClient*/
+    private http: HttpClient,
     private retryPolicyService: RetryPolicyService
   ) { }
 
   ngOnInit(): void {
   }
 
-  /*callServiceExample() {
+  callServiceExample() {
     this.http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(response => {
       console.log(response);
     });
-  }*/
+  }
 
   callRetryPoliceServiceExample() {
     console.log('callRetryPoliceServiceExample');

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 
 //Angular Material
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -30,6 +30,9 @@ import { RetryPolicyComponent } from './retry-policy/retry-policy.component';
 
 //Services
 import { RetryPolicyService } from './services/retry-policy.service';
+
+//Interceptors
+import { RetryInterceptor } from './interceptors/RetryInterceptor ';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,14 @@ import { RetryPolicyService } from './services/retry-policy.service';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [RetryPolicyService],
+  providers: [
+    RetryPolicyService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RetryInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
